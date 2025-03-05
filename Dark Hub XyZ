@@ -38,11 +38,11 @@ local Window = Rayfield:CreateWindow({
 local MainTab = Window:CreateTab("Home", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Option")
 
-local Tab = Window:CreateTab("Blox Fruits", nil) -- Title, Image
+local Tab = Window:CreateTab("Other", nil) -- Title, Image
 local Section = Tab:CreateSection("Option")
 Rayfield:Notify({
-   Title = "Enjoying The Gui? Sub  @MrXYZZj",
-   Content = "SUB OR AM KICKING U OUT just kidding :)",
+   Title = "Dark Hub Notification",
+   Content = "Fun fact: you = cool",
    Duration = 6,
    Image = nil,
 })
@@ -77,78 +77,6 @@ local Button = MainTab:CreateButton({
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Global Message (Not working)",
-   Callback = function()
- local ScreenGui = script.Parent
-
-local MessageCreation = ScreenGui:WaitForChild("Message Creation")
-local CreationMainFrame = MessageCreation:WaitForChild("MainFrame")
-local CreationDataFrame = CreationMainFrame:WaitForChild("DataFrame")
-local CloseButton1 = CreationDataFrame:WaitForChild("CloseButton")
-local CreationMessageText = CreationDataFrame:WaitForChild("MessageText")
-local CreationSendButton = CreationDataFrame:WaitForChild("SendButton")
-local CloseButton2 = MessageCreation:WaitForChild("OpenClose"):WaitForChild("Frame"):WaitForChild("TextButton")
-
-local DisplayMainFrame = ScreenGui:WaitForChild("Message Display")
-local DisplayDataFrame = DisplayMainFrame:WaitForChild("Frame")
-local DisplayMessageText = DisplayDataFrame:WaitForChild("MessageText")
-local DisplayTitle = DisplayDataFrame:WaitForChild("Title")
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local GlobalMessageDisplay = ReplicatedStorage:WaitForChild("GlobalMessageDisplay")
-local GlobalMessageNewMessage = ReplicatedStorage:WaitForChild("GlobalMessageNewMessage")
-local GlobalMessageResponse = ReplicatedStorage:WaitForChild("GlobalMessageResponse")
-
-local OpenCreation = false
-
-local function CreationOpenClose()
-	CreationMainFrame.Visible = not CreationMainFrame.Visible
-	OpenCreation = not OpenCreation
-end
-
-local function DisplayOpenClose()
-	DisplayMainFrame.Visible = not DisplayMainFrame.Visible
-end
-
-CloseButton1.MouseButton1Click:Connect(CreationOpenClose)
-CloseButton2.MouseButton1Click:Connect(CreationOpenClose)
-
-CreationSendButton.MouseButton1Click:Connect(function()
-	if CreationSendButton.Text == "Send" then
-		CreationSendButton.Text = "Sending"
-		
-		local TempText = CreationMessageText.Text
-		GlobalMessageNewMessage:FireServer(TempText)
-	end
-end)
-
-GlobalMessageResponse.OnClientEvent:Connect(function(Response, NewText)
-	if Response == nil then
-		CreationSendButton.Text = "Send"
-		CreationMessageText.Text = ""
-		
-		CreationOpenClose()
-	else
-		CreationSendButton.Text = Response
-		CreationMessageText.Text = NewText
-		
-		wait(5)
-		CreationSendButton.Text = "Send"
-	end
-end)
-
-GlobalMessageDisplay.OnClientEvent:Connect(function(Data)
-	DisplayOpenClose()
-	
-	DisplayTitle.Text = "Global Message - ".. Data[1]
-	DisplayMessageText.Text = Data[2]
-	
-	wait(5)
-	DisplayOpenClose()
-end)
-   end,
-})
 
 local Button = MainTab:CreateButton({
    Name = "Give Sword ⚔️ (Client)",
