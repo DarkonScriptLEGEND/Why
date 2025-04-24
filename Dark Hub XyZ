@@ -15,7 +15,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "Dark_Hub_Config"
    },
 
-   KeySystem = true,
+   KeySystem = false,
    KeySettings = {
       Title = "🔐 Access Gate",
       Subtitle = "Verification Required",
@@ -159,11 +159,11 @@ Auto:CreateToggle({
 -- UTILITIES
 Misc:CreateSection("Miscellaneous")
 Misc:CreateButton({
-   Name = "Rayfield Notification",
+   Name = "Subscribe",
    Callback = function()
       Rayfield:Notify({
-         Title = "Dark Hub XYZ",
-         Content = "Welcome to a new dimension 😈",
+         Title = "Channel Name",
+         Content = "@nightfixder",
          Duration = 6
       })
    end
