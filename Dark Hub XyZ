@@ -168,3 +168,25 @@ Misc:CreateButton({
       })
    end
 })
+
+-- GAME EXPLOITS
+Exploits:CreateSection("Forsaken 1")
+Exploits:CreateButton({
+   Name = "Forsaken script 1 (gets rid of rayfield)",
+   Callback = function()
+     -- https://scriptblox.com/script/Forsaken-Best-Script-41906
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Iliankytb/Iliankytb/main/BestForsakenScript"))()
+   end
+})
+
+-- GAME EXPLOITS
+Exploits:CreateSection("Forsaken 2")
+Exploits:CreateButton({
+   Name = "Forsaken script 2 ",
+   Callback = function()
+    -- https://scriptblox.com/script/Universal-Script-Forsaken-keyless-Saryn-Hub-41905
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Saiky988/Saryn-Hub/refs/heads/main/Saryn%25Hub%25Beta.lua'))()
+   end
+})
